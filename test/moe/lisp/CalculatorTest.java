@@ -56,38 +56,191 @@ public class CalculatorTest {
         int actual = calc.multiply(0, -20);
         assertEquals(expected, actual);
     }
-    /**
-     * Test of multiply method, of class Calculator.
-     */
-    /*
-    @Test
-    public void testMultiply() {
-        System.out.println("multiply");
-        int x = 0;
-        int y = 0;
-        Calculator instance = new Calculator();
-        int expResult = 0;
-        int result = instance.multiply(x, y);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    */
 
     /**
-     * Test of max method, of class Calculator.
+     * max関数のテスト <br />
+     * 対象: max(int, int, int) <br />
+     * 条件: (1, 2, 3) <br />
+     * 期待する戻り値: 3 <br />
      */
     @Test
-    public void testMax() {
+    public void testMax01() {
         System.out.println("max");
-        int a = 0;
-        int b = 0;
-        int c = 0;
+        int a = 1;
+        int b = 2;
+        int c = 3;
         Calculator instance = new Calculator();
-        int expResult = 0;
+        int expResult = 3;
         int result = instance.max(a, b, c);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fail at a:" + String.valueOf(a) + ", b:" + String.valueOf(b) + ", c:" + String.valueOf(c) + ".", expResult, result);
+    }
+    
+    /**
+     * max関数のテスト <br />
+     * 対象: max(int, int, int) <br />
+     * 条件: (1, 3, 2) <br />
+     * 期待する戻り値: 3 <br />
+     */
+    @Test
+    public void testMax02() {
+        System.out.println("max");
+        int a = 1;
+        int b = 3;
+        int c = 2;
+        Calculator instance = new Calculator();
+        int expResult = 3;
+        int result = instance.max(a, b, c);
+        assertEquals("Fail at a:" + String.valueOf(a) + ", b:" + String.valueOf(b) + ", c:" + String.valueOf(c) + ".", expResult, result);
+    }
+    
+    /**
+     * max関数のテスト <br />
+     * 対象: max(int, int, int) <br />
+     * 条件: (3, 2, 1) <br />
+     * 期待する戻り値: 3 <br />
+     */
+    @Test
+    public void testMax03() {
+        System.out.println("max");
+        int a = 3;
+        int b = 2;
+        int c = 1;
+        Calculator instance = new Calculator();
+        int expResult = 3;
+        int result = instance.max(a, b, c);
+        assertEquals("Fail at a:" + String.valueOf(a) + ", b:" + String.valueOf(b) + ", c:" + String.valueOf(c) + ".", expResult, result);
+    }
+    
+    /**
+     * max関数のテスト <br />
+     * 全て同じ値の場合のテスト <br />
+     * 対象: max(int, int, int) <br />
+     * 条件: (1, 1, 1) <br />
+     * 期待する戻り値: 1 <br />
+     */
+    @Test
+    public void testMax04() {
+        System.out.println("max");
+        int a = 1;
+        int b = 1;
+        int c = 1;
+        Calculator instance = new Calculator();
+        int expResult = 1;
+        int result = instance.max(a, b, c);
+        assertEquals("Fail at a:" + String.valueOf(a) + ", b:" + String.valueOf(b) + ", c:" + String.valueOf(c) + ".", expResult, result);
+    }
+    
+    /**
+     * max関数のテスト <br />
+     * 二つの引数が同じ値かつそうでない引数が大きい場合のテスト <br />
+     * 対象: max(int, int, int) <br />
+     * 条件: (2, 1, 1) <br />
+     * 期待する戻り値: 2 <br />
+     */
+    @Test
+    public void testMax05() {
+        System.out.println("max");
+        int a = 2;
+        int b = 1;
+        int c = 1;
+        Calculator instance = new Calculator();
+        int expResult = 2;
+        int result = instance.max(a, b, c);
+        assertEquals("Fail at a:" + String.valueOf(a) + ", b:" + String.valueOf(b) + ", c:" + String.valueOf(c) + ".", expResult, result);
+    }
+    
+    /**
+     * max関数のテスト <br />
+     * 二つの引数が同じ値かつそうでない引数が大きい場合のテスト <br />
+     * 対象: max(int, int, int) <br />
+     * 条件: (1, 2, 1)
+     * 期待する戻り値: 2
+     */
+    @Test
+    public void testMax06() {
+        System.out.println("max");
+        int a = 1;
+        int b = 2;
+        int c = 1;
+        Calculator instance = new Calculator();
+        int expResult = 2;
+        int result = instance.max(a, b, c);
+        assertEquals("Fail at a:" + String.valueOf(a) + ", b:" + String.valueOf(b) + ", c:" + String.valueOf(c) + ".", expResult, result);
+    }
+    
+    /**
+     * max関数のテスト <br />
+     * 二つの引数が同じ値かつそうでない引数が大きい場合のテスト <br />
+     * 対象: max(int, int, int) <br />
+     * 条件: (1, 1, 2) <br />
+     * 期待する戻り値: 2 <br />
+     */
+    @Test
+    public void testMax07() {
+        System.out.println("max");
+        int a = 1;
+        int b = 1;
+        int c = 2;
+        Calculator instance = new Calculator();
+        int expResult = 2;
+        int result = instance.max(a, b, c);
+        assertEquals("Fail at a:" + String.valueOf(a) + ", b:" + String.valueOf(b) + ", c:" + String.valueOf(c) + ".", expResult, result);
+    }
+    
+    /**
+     * max関数のテスト <br />
+     * 二つの引数が同じ値かつその引数が大きい場合のテスト <br />
+     * 対象: max(int, int, int) <br />
+     * 条件: (1, 2, 2)
+     * 期待する戻り値: 2
+     */
+    @Test
+    public void testMax08() {
+        System.out.println("max");
+        int a = 1;
+        int b = 2;
+        int c = 2;
+        Calculator instance = new Calculator();
+        int expResult = 2;
+        int result = instance.max(a, b, c);
+        assertEquals("Fail at a:" + String.valueOf(a) + ", b:" + String.valueOf(b) + ", c:" + String.valueOf(c) + ".", expResult, result);
+    }
+    
+    /**
+     * max関数のテスト <br />
+     * 二つの引数が同じ値かつその引数が大きい場合のテスト <br />
+     * 対象: max(int, int, int) <br />
+     * 条件: (2, 1, 2)
+     * 期待する戻り値: 2
+     */
+    @Test
+    public void testMax09() {
+        System.out.println("max");
+        int a = 2;
+        int b = 1;
+        int c = 2;
+        Calculator instance = new Calculator();
+        int expResult = 2;
+        int result = instance.max(a, b, c);
+        assertEquals("Fail at a:" + String.valueOf(a) + ", b:" + String.valueOf(b) + ", c:" + String.valueOf(c) + ".", expResult, result);
+    }
+    
+    /**
+     * max関数のテスト <br />
+     * 二つの引数が同じ値かつその引数が大きい場合のテスト <br />
+     * 対象: max(int, int, int) <br />
+     * 条件: (2, 2, 1)
+     * 期待する戻り値: 1
+     */
+    @Test
+    public void testMax10() {
+        System.out.println("max");
+        int a = 2;
+        int b = 2;
+        int c = 1;
+        Calculator instance = new Calculator();
+        int expResult = 2;
+        int result = instance.max(a, b, c);
+        assertEquals("Fail at a:" + String.valueOf(a) + ", b:" + String.valueOf(b) + ", c:" + String.valueOf(c) + ".", expResult, result);
     }
 }
