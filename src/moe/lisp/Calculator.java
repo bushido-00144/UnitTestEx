@@ -21,14 +21,14 @@ public class Calculator {
      */
     public int max(int a, int b, int c) {
         int x;
-        if (a > b) {
-            if (b > c) {
+        if (a >= b) {
+            if (b >= c) {
                 x = a;
             } else {
                 x = c;
             }
         } else {
-            if (b > c) {
+            if (b >= c) {
                 x = b;
             } else {
                 x = c;
